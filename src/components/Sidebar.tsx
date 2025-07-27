@@ -87,7 +87,7 @@ const Sidebar = () => {
           <GoSidebarCollapse
             size={26}
             onClick={toggleSidebar}
-            className="text-gray-400 hover:text-white cursor-pointer transition-transform hover:rotate-180"
+            className="text-gray-400 hover:text-white cursor-pointer transition-transform hover:rotate-180 hidden md:block"
             title="Toggle Sidebar"
           />
         </div>

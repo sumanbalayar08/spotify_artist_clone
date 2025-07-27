@@ -3,7 +3,7 @@ import { supabase } from './supabase';
 
 export async function fetchArtists({
   page = 0,
-  limit = 6,
+  limit = 8,
   search = '',
 }: {
   page?: number;

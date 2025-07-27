@@ -68,13 +68,17 @@ export default function Display() {
   }, [hasMore, loading]);
 
   return (
-    <main className="w-full h-full px-4 bg-zinc-800">
-      <div className="h-full overflow-y-auto pr-2">
+    <main className="w-full h-full bg-zinc-800 rounded-lg">
+      <div className="h-full overflow-y-auto">
         {artists.length === 0 && loading ? (
           <div className="flex flex-wrap gap-4">
             {Array.from({ length: 8 }).map((_, i) => (
               <SkeletonCard key={i} />
             ))}
+          </div>
+        ) : artists.length === 0 && !loading ? (
+          <div className="flex items-center justify-center h-full text-white font-bold text-lg">
+            No artists found.
           </div>
         ) : (
           <>

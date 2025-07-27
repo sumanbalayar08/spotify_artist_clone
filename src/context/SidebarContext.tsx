@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 type SidebarContextType = {
   isOpen: boolean;
@@ -13,6 +13,21 @@ export const SidebarProvider = ({ children }: { children: React.ReactNode }) => 
   const toggleSidebar = () => {
     setIsOpen(prev => !prev);
   }
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setIsOpen(false);
+      } else {
+        setIsOpen(true);
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <SidebarContext.Provider value={{ isOpen, toggleSidebar }}>
