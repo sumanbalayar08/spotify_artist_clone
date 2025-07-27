@@ -83,7 +83,7 @@ export default function Display() {
         ) : (
           <>
             <motion.div
-              className="flex flex-wrap gap-4"
+              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
               variants={containerVariants}
               initial="hidden"
               animate="visible"
@@ -94,7 +94,7 @@ export default function Display() {
             </motion.div>
 
             {loading && page > 0 && (
-              <div className="flex flex-wrap gap-4 mt-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
                 {Array.from({ length: 4 }).map((_, i) => (
                   <SkeletonCard key={`loading-${i}`} />
                 ))}

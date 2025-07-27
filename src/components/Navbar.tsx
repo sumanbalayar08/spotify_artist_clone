@@ -7,7 +7,6 @@ import { useSearch } from "../context/SearchContext";
 import { FaFirefoxBrowser } from "react-icons/fa6";
 
 const Navbar = () => {
-
   const { search, setSearch } = useSearch();
 
   return (

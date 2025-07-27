@@ -16,7 +16,7 @@ export const SidebarProvider = ({ children }: { children: React.ReactNode }) => 
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 768) {
+      if (window.innerWidth < 1200) {
         setIsOpen(false);
       } else {
         setIsOpen(true);
